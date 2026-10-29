@@ -2,456 +2,733 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matheus Prado | Advocacia</title>
-    <meta name="description" content="Escritório especializado em direito da saúde e médico. Atuamos em ações contra planos de saúde e erros médicos.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Matheus Prado Advocacia | Direito Médico e da Saúde</title>
+    <meta name="description" content="Escritório com atuação concentrada em direito médico e da saúde: negativa de cobertura pelo plano, acesso a medicamentos, internação, cirurgia e erro médico. Atendimento digital em todo o Brasil.">
+    <meta name="author" content="Matheus Prado Advocacia">
+    <meta name="robots" content="index, follow">
+    <!-- PREENCHER: quando o domínio definitivo existir, aponte o canonical e o
+         og:url para ele. Ex.: <link rel="canonical" href="https://seudominio.com.br/"> -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Matheus Prado Advocacia">
+    <meta property="og:title" content="Matheus Prado Advocacia | Direito Médico e da Saúde">
+    <meta property="og:description" content="Atuação concentrada em direito médico e da saúde. Atendimento digital em todo o Brasil.">
+    <meta property="og:image" content="img/favicon-512.png">
+
+    <meta name="theme-color" content="#3b483e">
+
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="img/favicon-512.png" sizes="512x512" type="image/png">
+    <link rel="apple-touch-icon" href="img/favicon-180.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/logo.jpg" type="image/png" sizes="32x32">
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
-    <script>
-        emailjs.init('sN0qtc8S5ad9Qc8Yg');
+    <!-- Marca que ha script antes da primeira pintura. O CSS usa isso para
+         decidir entre o painel deslizante e o menu em lista. -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Matheus Prado Advocacia",
+      "description": "Atuação concentrada em direito médico e da saúde.",
+      "image": "img/favicon-512.png",
+      "telephone": "+5513981804959",
+      "email": "matheusrprado@hotmail.com",
+      "areaServed": "BR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Luiz Antonio de Andrade Vieira, 216",
+        "addressLocality": "Praia Grande",
+        "addressRegion": "SP",
+        "postalCode": "11701-040",
+        "addressCountry": "BR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "12:00"
+        }
+      ]
+    }
     </script>
-
 </head>
 <body>
-    <!-- Header -->
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <img src="img/logo.jpg" alt="Logo" width="160">    
-        </div>
-        
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
+
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ======================================================================
+     Conjunto de ícones. Ficam aqui dentro, em vez de virem de um CDN:
+     carregam junto com a página e seguem a cor do texto.
+     ====================================================================== -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.6-4.3A8.4 8.4 0 1 1 7.8 20L3 21z"/><path d="M8.6 9.1c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2.1.4 0 .6l-.4.5c-.1.2-.2.3-.1.5a5 5 0 0 0 2.4 2.1c.2.1.4 0 .5-.1l.5-.6c.2-.2.3-.2.5-.1l1.6.8c.2.1.3.2.3.4 0 .3-.1.9-.4 1.1-.3.3-.9.5-1.4.5a7.3 7.3 0 0 1-5.9-5.9c0-.5.2-1 .5-1.4z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M21 16.9v2.6a1.6 1.6 0 0 1-1.8 1.6 16.5 16.5 0 0 1-7.2-2.6 16.2 16.2 0 0 1-5-5A16.5 16.5 0 0 1 4.4 6.3 1.6 1.6 0 0 1 6 4.5h2.6a1.6 1.6 0 0 1 1.6 1.4c.1.8.3 1.6.6 2.4a1.6 1.6 0 0 1-.4 1.7l-1.1 1.1a13 13 0 0 0 5 5l1.1-1.1a1.6 1.6 0 0 1 1.7-.4c.8.3 1.6.5 2.4.6A1.6 1.6 0 0 1 21 16.9z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5.2-8 12-8 12s-8-6.8-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><path d="M17.3 6.8h.01"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14.5 8.5h2.3V5.3h-2.6c-2.3 0-3.7 1.5-3.7 3.9v1.9H8v3.2h2.5V21h3.4v-6.7h2.4l.4-3.2h-2.8V9.6c0-.7.3-1.1 1-1.1z"/></symbol>
+
+    <!-- Áreas de atuação -->
+    <symbol id="i-internacao" viewBox="0 0 24 24"><path d="M3 18v-6h18v6"/><path d="M3 18h18"/><path d="M3 12V7"/><path d="M21 18v2M3 18v2"/><circle cx="8" cy="9" r="2"/><path d="M12 12v-2h9"/></symbol>
+    <symbol id="i-cirurgia" viewBox="0 0 24 24"><path d="M3 21l7.5-7.5"/><path d="M13 11l7-7a2.8 2.8 0 0 0-4-4l-7 7"/><path d="M9 7l8 8"/><circle cx="11.5" cy="12.5" r="1.4"/></symbol>
+    <symbol id="i-domiciliar" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M12 11v5M9.5 13.5h5"/></symbol>
+    <symbol id="i-exames" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v5.5L5.5 17a2.5 2.5 0 0 0 2.2 3.6h8.6A2.5 2.5 0 0 0 18.5 17L14 8.5V3"/><path d="M7.5 14h9"/></symbol>
+    <symbol id="i-erro" viewBox="0 0 24 24"><path d="M6 3v5a5 5 0 0 0 10 0V3"/><path d="M4 3h3M15 3h3"/><path d="M11 13v2a5 5 0 0 0 9 3"/><circle cx="20" cy="17" r="2.2"/></symbol>
+    <symbol id="i-medicamentos" viewBox="0 0 24 24"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M8.5 8.5 15.5 15.5"/></symbol>
+    <symbol id="i-tratamentos" viewBox="0 0 24 24"><path d="M3 12h3.5l2-4.5 3 9 2.5-6 1.5 3H21"/></symbol>
+    <symbol id="i-contrato" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============================== Cabeçalho ============================== -->
+<header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho__interno">
+        <a class="marca" href="#inicio" aria-label="Matheus Prado Advocacia, ir para o início">
+            <!-- Só o símbolo: o nome já vem escrito ao lado, como texto. -->
+            <img src="img/logo-simbolo.png" alt="" width="228" height="301">
+            <span class="marca__texto">
+                <strong>Matheus Prado</strong>
+                <em>Advocacia</em>
+            </span>
+        </a>
+
+        <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir o menu">
+            <svg class="icone" aria-hidden="true"><use href="#i-menu"></use></svg>
         </button>
-        
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#areas">Áreas</a></li>
-                <li><a href="#blog">Blog</a></li>
+
+        <nav class="menu escondido" id="menu-principal" aria-label="Navegação principal">
+            <ul class="menu__lista">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#areas">Áreas de atuação</a></li>
+                <li><a href="#processo">Como funciona</a></li>
+                <li><a href="#sobre">O escritório</a></li>
+                <li><a href="#artigos">Artigos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
+            <a class="botao botao--primario menu__cta" href="https://wa.me/5513981804959" target="_blank" rel="noopener">
+                <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+                WhatsApp
+            </a>
         </nav>
     </div>
 </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Você tem sofrido com recusa do seu plano de saúde?</h1>
-                <p>Descubra como podemos ajudá-lo a superar e recuperar direito e sua saúde.</p>
-                <a href="https://wa.me/13981804959" class="btn" target="_blank">Fale com um especialista</a>
-            </div>
-        </div>
-    </section>
+<div class="menu-fundo" hidden></div>
 
-    <section id="sobre" class="about">
-        <div class="container">
-            <div class="about-img">
-                <img src="img/foto matheus.jpg" alt="Advogado especialista em direito da saúde" width="600">
-            </div>
-            <div class="about-content">
-                <h2>Sobre Nós</h2>
-                <p>Nosso escritório surgiu não apenas da paixão pelo Direito, mas de uma dor vivida na própria pele. Em um momento de urgência, um familiar precisou de uma cirurgia emergencial, mas o plano de saúde negou o procedimento alegando questões contratuais. Cada minuto era precioso e o desespero foi indescritível.</p>
-                <p>Diante dessa situação, usamos o conhecimento jurídico para agir rapidamente. Entramos com uma ação e conseguimos uma decisão favorável em poucas horas. A cirurgia foi feita a tempo, e a vida foi salva. Mas aquela experiência marcou profundamente nossa trajetória.</p>
-                <p>Foi ali que nasceu a missão que nos move até hoje: lutar para que ninguém mais passe por isso. Desde então, nos dedicamos a garantir que nenhuma família fique à mercê da burocracia dos planos de saúde.</p>
-                <ul class="about-list">
-                    <li><i class="fas fa-check-circle"></i> Atuamos em todo o Brasil, com atendimento rápido e digital.</li>
-                    <li><i class="fas fa-check-circle"></i> Expertise em direito da saúde</li>
-                    <li><i class="fas fa-check-circle"></i> Resultados comprovados</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<main id="conteudo">
 
-    <section id="areas" class="practice-areas">
-        <div class="container">
-            <h2>Áreas de Atuação</h2>
-            <div class="areas-grid">
-                <div class="area-card">
-                    <i class="fas fa-procedures"></i>
-                    <h3>Liberação de Internação</h3>
-                    <p>Garantia de acesso a internações hospitalares necessárias.</p>
-                </div>
-                <div class="area-card">
-                    <i class="fas fa-cut"></i>
-                    <h3>Liberação de Cirurgia</h3>
-                    <p>Assegurar realização de procedimentos cirúrgicos essenciais.</p>
-                </div>
-                <div class="area-card">
-                    <i class="fas fa-home"></i>
-                    <h3>Internação Domiciliar</h3>
-                    <p>Conquista de tratamento médico especializado em casa.</p>
-                </div>
-                <div class="area-card">
-                    <i class="fas fa-microscope"></i>
-                    <h3>Liberação de Exames</h3>
-                    <p>Garantia de acesso a exames e diagnósticos necessários.</p>
-                </div>                
-                <div class="area-card">
-                    <i class="fas fa-user-md"></i>
-                    <h3>Erros Médicos</h3>
-                    <p>Defesa em casos de negligência ou imperícia médica.</p>
-                </div>
-                <div class="area-card">
-                    <i class="fas fa-pills"></i>
-                    <h3>Medicamentos</h3>
-                    <p>Obtenção de remédios essenciais negados pelo plano.</p>
-                </div>
-                <div class="area-card">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Liberação de Tratamentos</h3>
-                    <p>Assegurar terapias e procedimentos especializados.</p>
-                </div>               
-                <div class="area-card">
-                    <i class="fas fa-file-contract"></i>
-                    <h3>Cancelamento de Plano</h3>
-                    <p>Defesa contra rescisões ilegais de convênios médicos.</p>
-                </div>   
-            </div>
-        </div>
-    </section>
+<!-- ================================ Início ============================== -->
+<section class="inicio" id="inicio">
+    <div class="container inicio__grade">
+        <div class="inicio__texto">
+            <p class="sobretitulo">Direito médico e da saúde</p>
+            <h1>Quando o plano de saúde nega,<br>existe caminho jurídico.</h1>
+            <p class="inicio__chamada">
+                O escritório atua em questões ligadas a negativa de cobertura, acesso a
+                medicamentos, internação, cirurgia e erro médico. O atendimento é feito
+                de forma digital, em todo o Brasil, direto com o advogado responsável.
+            </p>
 
-    <section class="testimonials">
-        <div class="container">
-            <h2>Avaliações dos Nossos Clientes</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial active">
-                    <div class="google-review">
-                        <div class="review-header">
-                            <img src="img/cliente1.avif" alt="Maria Silva" class="client-photo">
-                            <div class="client-info">
-                                <h3>Maria Silva</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>"O escritório conseguiu a aprovação do meu tratamento após anos de negativa pelo plano de saúde. Profissionais extremamente competentes e atenciosos em cada detalhe."</p>
-                        <div class="review-footer">
-                            <span class="review-date">2 semanas atrás</span>
-                            <img src="img/icongoogle.png" alt="Google" class="google-logo" width="20">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="google-review">
-                        <div class="review-header">
-                            <img src="img/cliente2.avif" alt="João Pereira" class="client-photo">
-                            <div class="client-info">
-                                <h3>João Pereira</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>"Excelente atendimento em meu caso de erro médico. Me orientaram em cada etapa e obtivemos uma ótima solução. Recomendo a todos que precisam de ajuda na área da saúde."</p>
-                        <div class="review-footer">
-                            <span class="review-date">1 mês atrás</span>
-                            <img src="img/icongoogle.png" alt="Google" class="google-logo" width="20">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="google-review">
-                        <div class="review-header">
-                            <img src="img/cliente3.avif" alt="Ana Lúcia" class="client-photo">
-                            <div class="client-info">
-                                <h3>Ana Lúcia</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>"Conseguiram o medicamento de alto custo para meu filho em tempo recorde. Agradeço imensamente a dedicação e competência da equipe. Fizeram toda a diferença em nossas vidas!"</p>
-                        <div class="review-footer">
-                            <span class="review-date">3 meses atrás</span>
-                            <img src="img/icongoogle.png" alt="Google" class="google-logo" width="20">
-                        </div>
-                    </div>
-                </div>
+            <div class="inicio__acoes">
+                <a class="botao botao--primario" href="https://wa.me/5513981804959" target="_blank" rel="noopener">
+                    <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+                    Falar pelo WhatsApp
+                </a>
+                <a class="botao botao--secundario" href="#areas">
+                    Ver áreas de atuação
+                    <svg class="icone" aria-hidden="true"><use href="#i-arrow"></use></svg>
+                </a>
             </div>
-            <div class="slider-controls">
-                <button class="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
 
-    <section id="blog" class="blog-preview">
-        <div class="container">
-            <h2>Últimas do Blog</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <img src="img/reajuste.jpg" alt="Plano de saúde" width="400" height="100">
-                    <div class="blog-content">
-                        <h3>Como contestar reajuste abusivo do plano de saúde</h3>
-                        <p>Entenda seus direitos quando o aumento da mensalidade ultrapassa os limites legais...</p>
-                        <a href="#" class="read-more" data-modal="modal-1">Leia mais</a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <img src="img/erromedico.jpg" alt="Erro médico">
-                    <div class="blog-content">
-                        <h3>Erro médico: quando caracteriza negligência?</h3>
-                        <p>Saiba quais situações configuram erro médico passível de indenização e como proceder...</p>
-                        <a href="#" class="read-more" data-modal="modal-2">Leia mais</a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <img src="img/medicamentoscusto.jpg" alt="Medicamentos">
-                    <div class="blog-content">
-                        <h3>Direito a medicamentos de alto custo pelo SUS</h3>
-                        <p>Conheça o passo a passo para garantir acesso a tratamentos caros através do sistema público...</p>
-                        <a href="#" class="read-more" data-modal="modal-3">Leia mais</a>
-                    </div>
-                </article>
-            </div>
+            <ul class="selos">
+                <li><svg class="icone" aria-hidden="true"><use href="#i-check"></use></svg> Atendimento em todo o Brasil</li>
+                <li><svg class="icone" aria-hidden="true"><use href="#i-check"></use></svg> Contato direto com o advogado</li>
+                <li><svg class="icone" aria-hidden="true"><use href="#i-check"></use></svg> Análise do caso antes de qualquer proposta</li>
+            </ul>
         </div>
-    </section>
-    <section id="contato" class="contact">
-        <div class="container">
-            <div class="contact-info">
-                <h2>Entre em Contato</h2>
-                <p>Estamos à disposição para esclarecer suas dúvidas e avaliar seu caso.</p>
-                
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
+
+        <figure class="inicio__retrato">
+            <img src="img/matheus-prado.jpg" alt="Matheus Prado, advogado responsável pelo escritório" width="901" height="1600" fetchpriority="high">
+            <figcaption>
+                <strong>Matheus Prado</strong>
+                <span>Advogado responsável</span>
+            </figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- ======================== Áreas de atuação ============================ -->
+<section class="secao areas" id="areas">
+    <div class="container">
+        <header class="secao__topo" data-revelar>
+            <p class="sobretitulo">Áreas de atuação</p>
+            <h2>Em que o escritório atua</h2>
+            <p class="secao__texto">
+                Cada situação exige uma medida diferente e tem prazos próprios.
+                A relação abaixo mostra os temas que o escritório acompanha.
+            </p>
+        </header>
+
+        <ul class="areas__grade">
+            <li class="area" data-revelar>
+                <svg class="icone icone--grande" aria-hidden="true"><use href="#i-internacao"></use></svg>
+                <h3>Liberação de internação</h3>
+                <p>Casos em que o plano recusa ou adia a internação hospitalar indicada pelo médico.</p>
+            </li>
+            <li class="area" data-revelar>
+                <svg class="icone icone--grande" aria-hidden="true"><use href="#i-cirurgia"></use></svg>
+                <h3>Liberação de cirurgia</h3>
+                <p>Negativa de procedimento cirúrgico com indicação médica, inclusive em caráter de urgência.</p>
+            </li>
+            <li class="area" data-revelar>
+                <svg class="icone icone--grande" aria-hidden="true"><use href="#i-domiciliar"></use></svg>
+                <h3>Internação domiciliar</h3>
+                <p>Pedidos de home care e de continuidade do tratamento fora do ambiente hospitalar.</p>
+            </li>
+            <li class="area" data-revelar>
+                <svg class="icone icone--grande" aria-hidden="true"><use href="#i-exames"></use></svg>
+                <h3>Liberação de exames</h3>
+                <p>Exames e diagnósticos negados sob alegação de carência, rol ou cobertura contratual.</p>
+            </li>
+            <li class="area" data-revelar>
+                <svg class="icone icone--grande" aria-hidden="true"><use href="#i-erro"></use></svg>
+                <h3>Erro médico</h3>
+                <p>Situações que envolvem suspeita de negligência, imprudência ou imperícia na assistência.</p>
+            </li>
+            <li class="area" data-revelar>
+                <svg class="icone icone--grande" aria-hidden="true"><use href="#i-medicamentos"></use></svg>
+                <h3>Medicamentos</h3>
+                <p>Acesso a medicamentos de alto custo, pela via do plano de saúde ou do SUS.</p>
+            </li>
+            <li class="area" data-revelar>
+                <svg class="icone icone--grande" aria-hidden="true"><use href="#i-tratamentos"></use></svg>
+                <h3>Liberação de tratamentos</h3>
+                <p>Terapias continuadas e procedimentos especializados recusados pela operadora.</p>
+            </li>
+            <li class="area" data-revelar>
+                <svg class="icone icone--grande" aria-hidden="true"><use href="#i-contrato"></use></svg>
+                <h3>Cancelamento de plano</h3>
+                <p>Rescisão unilateral do contrato e reajustes aplicados fora dos limites da ANS.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- =========================== Como funciona ============================ -->
+<section class="secao secao--escura" id="processo">
+    <div class="container">
+        <header class="secao__topo" data-revelar>
+            <p class="sobretitulo">Como funciona</p>
+            <h2>Do primeiro contato ao acompanhamento</h2>
+            <p class="secao__texto">
+                O caminho é o mesmo para qualquer caso. Você entende cada etapa antes
+                de decidir se quer seguir.
+            </p>
+        </header>
+
+        <ol class="processo__lista">
+            <li class="passo" data-revelar>
+                <span class="passo__numero">01</span>
+                <h3>Primeiro contato</h3>
+                <p>Você relata a situação pelo WhatsApp ou pelo formulário. Não há custo nesta conversa inicial.</p>
+            </li>
+            <li class="passo" data-revelar>
+                <span class="passo__numero">02</span>
+                <h3>Análise dos documentos</h3>
+                <p>Avaliamos a negativa por escrito, o relatório médico e o contrato do plano para entender o que se aplica.</p>
+            </li>
+            <li class="passo" data-revelar>
+                <span class="passo__numero">03</span>
+                <h3>Explicação das opções</h3>
+                <p>Você recebe uma explicação clara das medidas cabíveis, dos prazos envolvidos e do que cada caminho exige.</p>
+            </li>
+            <li class="passo" data-revelar>
+                <span class="passo__numero">04</span>
+                <h3>Acompanhamento</h3>
+                <p>Se decidir seguir, acompanha o andamento e fala direto com o advogado responsável pelo caso.</p>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<!-- ============================= O escritório =========================== -->
+<section class="secao sobre" id="sobre">
+    <div class="container sobre__grade">
+        <div class="sobre__texto" data-revelar>
+            <p class="sobretitulo">O escritório</p>
+            <h2>Por que o direito à saúde</h2>
+
+            <p>
+                O escritório nasceu de uma experiência pessoal. Um familiar precisou de
+                um procedimento de urgência e teve a cobertura negada pelo plano de saúde,
+                sob alegação de questões contratuais. A sensação de impotência diante da
+                burocracia, num momento em que cada hora importa, mudou o rumo da nossa
+                atuação.
+            </p>
+            <p>
+                Foi ali que surgiu a decisão de concentrar o trabalho no direito à saúde.
+                Desde então, a dedicação é orientar pacientes e famílias sobre os caminhos
+                jurídicos disponíveis quando o plano nega cobertura, quando falta acesso a
+                um medicamento ou quando há suspeita de erro médico.
+            </p>
+
+            <blockquote class="citacao">
+                A proposta é explicar com clareza o que a lei permite, qual medida cabe em
+                cada situação e o que esperar de cada etapa.
+            </blockquote>
+
+            <ul class="lista-marcada">
+                <li><svg class="icone" aria-hidden="true"><use href="#i-check"></use></svg> Atuação concentrada em direito médico e da saúde</li>
+                <li><svg class="icone" aria-hidden="true"><use href="#i-check"></use></svg> Atendimento digital, sem necessidade de deslocamento</li>
+                <li><svg class="icone" aria-hidden="true"><use href="#i-check"></use></svg> Orientação sobre a documentação necessária</li>
+            </ul>
+        </div>
+
+        <aside class="cartao-identificacao" data-revelar>
+            <img class="cartao-identificacao__logo" src="img/logo-simbolo.png" alt="" width="228" height="301">
+            <dl>
+                <div>
+                    <dt>Advogado responsável</dt>
+                    <dd>Matheus Prado</dd>
+                </div>
+                <div>
+                    <dt>Inscrição</dt>
+                    <!-- PREENCHER: número real de inscrição na OAB. -->
+                    <dd data-preencher>OAB/SP nº 000.000</dd>
+                </div>
+                <div>
+                    <dt>Atuação</dt>
+                    <dd>Direito médico e da saúde</dd>
+                </div>
+                <div>
+                    <dt>Abrangência</dt>
+                    <dd>Todo o território nacional</dd>
+                </div>
+            </dl>
+        </aside>
+    </div>
+</section>
+
+<!-- =============================== Artigos ============================== -->
+<section class="secao" id="artigos">
+    <div class="container">
+        <header class="secao__topo" data-revelar>
+            <p class="sobretitulo">Artigos</p>
+            <h2>Conteúdo informativo</h2>
+            <p class="secao__texto">
+                Textos sobre direitos previstos em lei e sobre os caminhos administrativos
+                disponíveis antes de qualquer medida judicial.
+            </p>
+        </header>
+
+        <div class="artigos__grade">
+            <article class="artigo" data-revelar>
+                <div class="artigo__imagem">
+                    <img src="img/reajuste.jpg" alt="" width="1024" height="1024" loading="lazy">
+                </div>
+                <div class="artigo__corpo">
+                    <h3>Como contestar reajuste abusivo do plano de saúde</h3>
+                    <p>O que a ANS define como limite, quando o aumento foge da regra e quais são os caminhos para contestar.</p>
+                    <button class="link-seta" type="button" data-modal="modal-1">
+                        Ler o artigo
+                        <svg class="icone" aria-hidden="true"><use href="#i-arrow"></use></svg>
+                    </button>
+                </div>
+            </article>
+
+            <article class="artigo" data-revelar>
+                <div class="artigo__imagem">
+                    <img src="img/erromedico.jpg" alt="" width="1024" height="1024" loading="lazy">
+                </div>
+                <div class="artigo__corpo">
+                    <h3>Erro médico: quando se caracteriza negligência</h3>
+                    <p>A diferença entre erro de diagnóstico, imperícia, negligência e imprudência, e o que reunir em caso de suspeita.</p>
+                    <button class="link-seta" type="button" data-modal="modal-2">
+                        Ler o artigo
+                        <svg class="icone" aria-hidden="true"><use href="#i-arrow"></use></svg>
+                    </button>
+                </div>
+            </article>
+
+            <article class="artigo" data-revelar>
+                <div class="artigo__imagem">
+                    <img src="img/medicamentoscusto.jpg" alt="" width="1024" height="1024" loading="lazy">
+                </div>
+                <div class="artigo__corpo">
+                    <h3>Medicamentos de alto custo pelo SUS</h3>
+                    <p>Os documentos exigidos e o passo a passo do pedido administrativo na Secretaria de Saúde.</p>
+                    <button class="link-seta" type="button" data-modal="modal-3">
+                        Ler o artigo
+                        <svg class="icone" aria-hidden="true"><use href="#i-arrow"></use></svg>
+                    </button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ======================== Perguntas frequentes ======================== -->
+<section class="secao perguntas" id="perguntas">
+    <div class="container container--estreito">
+        <header class="secao__topo" data-revelar>
+            <p class="sobretitulo">Perguntas frequentes</p>
+            <h2>Dúvidas sobre o atendimento</h2>
+        </header>
+
+        <div class="acordeao" data-revelar>
+            <details class="pergunta">
+                <summary>
+                    Preciso ir até o escritório?
+                    <svg class="icone" aria-hidden="true"><use href="#i-chevron"></use></svg>
+                </summary>
+                <div class="pergunta__corpo">
+                    <p>Não. O atendimento pode ser feito inteiramente de forma digital, de qualquer lugar do Brasil. O escritório também recebe presencialmente em Praia Grande, com hora marcada.</p>
+                </div>
+            </details>
+
+            <details class="pergunta">
+                <summary>
+                    Quais documentos devo separar?
+                    <svg class="icone" aria-hidden="true"><use href="#i-chevron"></use></svg>
+                </summary>
+                <div class="pergunta__corpo">
+                    <p>Em geral: a negativa do plano por escrito, o relatório médico com o CID e a justificativa do procedimento, o pedido ou prescrição, e a cópia do contrato do plano. Na primeira conversa indicamos o que falta para o seu caso.</p>
+                </div>
+            </details>
+
+            <details class="pergunta">
+                <summary>
+                    Em quanto tempo tenho uma resposta?
+                    <svg class="icone" aria-hidden="true"><use href="#i-chevron"></use></svg>
+                </summary>
+                <div class="pergunta__corpo">
+                    <p>Depende da medida cabível e do caso concreto, e não é possível prever o resultado. O que explicamos na primeira conversa são os prazos previstos para cada caminho e o que costuma influenciar a tramitação.</p>
+                </div>
+            </details>
+
+            <details class="pergunta">
+                <summary>
+                    O escritório atua em pedidos contra o SUS?
+                    <svg class="icone" aria-hidden="true"><use href="#i-chevron"></use></svg>
+                </summary>
+                <div class="pergunta__corpo">
+                    <p>Sim. Além das questões com operadoras de plano de saúde, o escritório acompanha pedidos de medicamentos e tratamentos pela via pública.</p>
+                </div>
+            </details>
+
+            <details class="pergunta">
+                <summary>
+                    Como funcionam os honorários?
+                    <svg class="icone" aria-hidden="true"><use href="#i-chevron"></use></svg>
+                </summary>
+                <div class="pergunta__corpo">
+                    <p>Os honorários são definidos caso a caso, de acordo com a complexidade e a medida adotada, e informados por escrito antes de qualquer contratação. A conversa inicial para entender a situação não tem custo.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- =============================== Contato ============================== -->
+<section class="secao secao--escura" id="contato">
+    <div class="container contato__grade">
+        <div data-revelar>
+            <p class="sobretitulo">Contato</p>
+            <h2>Conte o que aconteceu</h2>
+            <p class="secao__texto">
+                Descreva a situação com o máximo de detalhes que conseguir. Retornamos
+                dentro do horário de atendimento.
+            </p>
+
+            <ul class="dados">
+                <li>
+                    <svg class="icone" aria-hidden="true"><use href="#i-pin"></use></svg>
                     <div>
-                        <h3>Endereço</h3>
+                        <strong>Endereço</strong>
                         <p>R. Luiz Antonio de Andrade Vieira, 216<br>Boqueirão, Praia Grande - SP, 11701-040</p>
                     </div>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-phone-alt"></i>
+                </li>
+                <li>
+                    <svg class="icone" aria-hidden="true"><use href="#i-phone"></use></svg>
                     <div>
-                        <h3>Telefone</h3>
-                        <p>(13) 98180-4959</p>
+                        <strong>Telefone e WhatsApp</strong>
+                        <p><a href="https://wa.me/5513981804959" target="_blank" rel="noopener">(13) 98180-4959</a></p>
                     </div>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
+                </li>
+                <li>
+                    <svg class="icone" aria-hidden="true"><use href="#i-mail"></use></svg>
                     <div>
-                        <h3>Email</h3>
-                        <p>matheusrprado@hotmail.com</p>
+                        <strong>E-mail</strong>
+                        <p><a href="mailto:matheusrprado@hotmail.com">matheusrprado@hotmail.com</a></p>
                     </div>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-clock"></i>
+                </li>
+                <li>
+                    <svg class="icone" aria-hidden="true"><use href="#i-clock"></use></svg>
                     <div>
-                        <h3>Horário</h3>
-                        <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 12h</p>
+                        <strong>Horário</strong>
+                        <p>Segunda a sexta, das 9h às 18h<br>Sábado, das 9h às 12h</p>
                     </div>
-                </div>
-            </div>
-            
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Seu email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder="Seu telefone">
-                    </div>
-                    <div class="form-group">
-                        <select id="subject" name="subject" required>
-                            <option value="">Assunto</option>
-                            <option value="Liberação-de-internação">Liberação de internação</option>
-                            <option value="Liberação-de-Cirurgia">Liberação de Cirurgia</option>
-                            <option value="Internação-Domiciliar">Internação Domiciliar</option>
-                            <option value="Liberação-de-Exames">Liberação de Exames</option>
-                            <option value="Erros-Médicos">Erros Médicos</option>
-                            <option value="Medicamentos">Medicamentos</option>
-                            <option value="Liberação-de-Tratamentos">Liberação de Tratamentos</option>
-                            <option value="Cancelamento-de-Plano">Cancelamento de Plano</option>
-                            <option value="outros">Outros</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Enviar Mensagem</button>
-                </form>
-                <div id="formMessage" style="display:none; margin-top:20px; padding:10px; background:#4CAF50; color:white; border-radius:5px;"></div>
-            </div>
+                </li>
+            </ul>
         </div>
-    </section>
 
+        <div class="contato__formulario" data-revelar>
+            <form id="formularioContato" novalidate>
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" autocomplete="name" required>
+                </div>
+                <div class="campo-duplo">
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" autocomplete="tel" inputmode="tel">
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="assunto">Assunto</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="">Selecione</option>
+                        <option value="Liberação de internação">Liberação de internação</option>
+                        <option value="Liberação de cirurgia">Liberação de cirurgia</option>
+                        <option value="Internação domiciliar">Internação domiciliar</option>
+                        <option value="Liberação de exames">Liberação de exames</option>
+                        <option value="Erro médico">Erro médico</option>
+                        <option value="Medicamentos">Medicamentos</option>
+                        <option value="Liberação de tratamentos">Liberação de tratamentos</option>
+                        <option value="Cancelamento de plano">Cancelamento de plano</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="mensagem">O que aconteceu</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                </div>
 
-    <!-- Modais do Blog -->
-    <div id="modal-container">
-        <!-- Modal 1 -->
-        <div id="modal-1" class="modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h2>Como contestar reajuste abusivo do plano de saúde</h2>
-                <img src="img/reajuste.jpg" alt="Plano de saúde" class="modal-image">
-                <div class="modal-text">
-                    <p>Os planos de saúde no Brasil estão sujeitos a regras específicas quanto aos reajustes anuais. Quando esses aumentos ultrapassam os limites estabelecidos pela Agência Nacional de Saúde Suplementar (ANS), configuram reajuste abusivo.</p>
-                    
-                    <h3>O que caracteriza abusividade?</h3>
-                    <p>Considera-se abusivo quando o aumento:</p>
-                    <ul>
-                        <li>Ultrapassa o índice oficial determinado pela ANS</li>
-                        <li>É aplicado de forma discriminatória a grupos específicos</li>
-                        <li>Não é comunicado com antecedência mínima de 45 dias</li>
-                        <li>Não apresenta justificativa técnica adequada</li>
-                    </ul>
-                    
-                    <h3>Como contestar?</h3>
-                    <p>O primeiro passo é solicitar formalmente explicações à operadora do plano. Caso não haja resposta satisfatória, você pode:</p>
-                    <ol>
-                        <li>Registrar reclamação na ANS pelo telefone 0800 701 9656</li>
-                        <li>Procurar o PROCON de sua cidade</li>
-                        <li>Buscar orientação jurídica especializada</li>
-                    </ol>
-                </div>
+                <button class="botao botao--primario botao--largo" type="submit">Enviar mensagem</button>
+
+                <p class="formulario__aviso">
+                    Ao enviar, você concorda que o escritório use estes dados apenas para
+                    responder ao seu contato.
+                </p>
+            </form>
+
+            <p class="formulario__retorno" id="retornoFormulario" role="status" hidden></p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- =============================== Rodapé =============================== -->
+<footer class="rodape">
+    <div class="container rodape__grade">
+        <div class="rodape__coluna rodape__coluna--marca">
+            <img src="img/logo-marca-claro.png" alt="Matheus Prado Advocacia" width="340" height="444">
+            <p>
+                Escritório com atuação concentrada em direito médico e da saúde,
+                com atendimento digital em todo o Brasil.
+            </p>
+            <!-- PREENCHER: endereços reais das redes do escritório. -->
+            <div class="rodape__sociais">
+                <a href="#" aria-label="Instagram do escritório">
+                    <svg class="icone" aria-hidden="true"><use href="#i-instagram"></use></svg>
+                </a>
+                <a href="#" aria-label="Facebook do escritório">
+                    <svg class="icone" aria-hidden="true"><use href="#i-facebook"></use></svg>
+                </a>
             </div>
         </div>
-        
-        <!-- Modal 2 -->
-        <div id="modal-2" class="modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h2>Erro médico: quando caracteriza negligência?</h2>
-                <img src="img/erromedico.jpg" alt="Erro médico" class="modal-image">
-                <div class="modal-text">
-                    <p>Nem todo erro médico configura negligência passível de indenização. A legislação brasileira estabelece diferenças importantes entre:</p>
-                    
-                    <h3>1. Erro de Diagnóstico</h3>
-                    <p>Só caracteriza negligência quando o profissional deixou de seguir protocolos médicos estabelecidos ou ignorou sintomas evidentes.</p>
-                    
-                    <h3>2. Imperícia</h3>
-                    <p>Ocorre quando o médico não tem a habilidade técnica necessária para o procedimento realizado.</p>
-                    
-                    <h3>3. Negligência</h3>
-                    <p>Configura-se quando o profissional deixa de tomar cuidados básicos que qualquer colega de profissão tomaria na mesma situação.</p>
-                    
-                    <h3>4. Imprudência</h3>
-                    <p>Quando o médico age com precipitação, sem a devida cautela, realizando procedimentos desnecessários ou arriscados.</p>
-                    
-                    <h3>O que fazer em caso de suspeita?</h3>
-                    <p>Recomendamos:</p>
-                    <ul>
-                        <li>Obter cópia de todo o prontuário médico</li>
-                        <li>Registrar boletim de ocorrência</li>
-                        <li>Buscar uma segunda opinião médica</li>
-                        <li>Consultar um advogado especializado</li>
-                    </ul>
-                </div>
-            </div>
+
+        <div class="rodape__coluna">
+            <h3>Navegação</h3>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#areas">Áreas de atuação</a></li>
+                <li><a href="#processo">Como funciona</a></li>
+                <li><a href="#sobre">O escritório</a></li>
+                <li><a href="#artigos">Artigos</a></li>
+                <li><a href="#perguntas">Perguntas frequentes</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
         </div>
-        
-        <!-- Modal 3 -->
-        <div id="modal-3" class="modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h2>Direito a medicamentos de alto custo pelo SUS</h2>
-                <img src="img/medicamentoscusto.jpg" alt="Medicamentos" class="modal-image">
-                <div class="modal-text">
-                    <p>O Sistema Único de Saúde (SUS) garante o fornecimento gratuito de medicamentos de alto custo para diversas doenças. Conheça o passo a passo para acessar esse direito:</p>
-                    
-                    <h3>Passo 1: Diagnóstico Confirmado</h3>
-                    <p>É necessário laudo médico detalhado com CID (Classificação Internacional de Doenças) que comprove a necessidade do medicamento.</p>
-                    
-                    <h3>Passo 2: Prescrição Médica</h3>
-                    <p>A receita deve conter:</p>
-                    <ul>
-                        <li>Nome completo do paciente</li>
-                        <li>Nome do medicamento (genérico ou de referência)</li>
-                        <li>Dosagem e posologia</li>
-                        <li>Carimbo e CRM do médico</li>
-                        <li>Data da prescrição</li>
-                    </ul>
-                    
-                    <h3>Passo 3: Protocolo na Secretaria de Saúde</h3>
-                    <p>Apresentar os documentos no setor de medicamentos excepcionais da Secretaria Municipal ou Estadual de Saúde. Geralmente é necessário:</p>
-                    <ul>
-                        <li>Cópia do RG e CPF</li>
-                        <li>Comprovante de residência</li>
-                        <li>Relatório médico completo</li>
-                        <li>Exames complementares</li>
-                    </ul>
-                </div>
-            </div>
+
+        <div class="rodape__coluna">
+            <h3>Áreas de atuação</h3>
+            <ul>
+                <li><a href="#areas">Liberação de internação</a></li>
+                <li><a href="#areas">Liberação de cirurgia</a></li>
+                <li><a href="#areas">Internação domiciliar</a></li>
+                <li><a href="#areas">Liberação de exames</a></li>
+                <li><a href="#areas">Erro médico</a></li>
+                <li><a href="#areas">Medicamentos</a></li>
+                <li><a href="#areas">Liberação de tratamentos</a></li>
+                <li><a href="#areas">Cancelamento de plano</a></li>
+            </ul>
+        </div>
+
+        <div class="rodape__coluna">
+            <h3>Escritório</h3>
+            <ul class="rodape__contato">
+                <li>R. Luiz Antonio de Andrade Vieira, 216<br>Boqueirão, Praia Grande - SP</li>
+                <li><a href="https://wa.me/5513981804959" target="_blank" rel="noopener">(13) 98180-4959</a></li>
+                <li><a href="mailto:matheusrprado@hotmail.com">matheusrprado@hotmail.com</a></li>
+                <!-- PREENCHER: número real de inscrição na OAB. -->
+                <li data-preencher>OAB/SP nº 000.000</li>
+            </ul>
         </div>
     </div>
 
-    <footer class="footer">
+    <div class="rodape__base">
         <div class="container">
-            <div class="footer-col">
-                <h3>Matheus Prado Advocacia</h3>
-                <p>Especialistas em direito médico e da saúde, dedicados a defender seus direitos com excelência e comprometimento.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#areas">Áreas de Atuação</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Áreas de Atuação</h3>
-                <ul>
-                    <li><a href="#">Liberação de cirurgia</a></li>
-                    <li><a href="#">Liberação de Internação</a></li>
-                    <li><a href="#">Internação Domiciliar</a></li>
-                    <li><a href="#">Liberação de Exames</a></li>
-                    <li><a href="#">Erros Médicos</a></li>
-                    <li><a href="#">Medicamentos</a></li>
-                    <li><a href="#">Liberação de Tratamentos</a></li>
-                    <li><a href="">Defesa contra rescisões ilegais de convênios médicos.</a></li>
-                </ul>
+            <p class="rodape__aviso">
+                Este site tem caráter meramente informativo, nos termos do Provimento
+                205/2021 da OAB. O conteúdo aqui publicado não constitui consulta
+                jurídica nem garante qualquer resultado.
+            </p>
+            <div class="rodape__linha">
+                <p>&copy; <span id="ano">2026</span> Matheus Prado Advocacia. Todos os direitos reservados.</p>
+                <p>Desenvolvido por <a href="https://felipeprado200.github.io/Portifolio/" target="_blank" rel="noopener">Felipe Prado</a></p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2023 Matheus Prado Advocacia. Todos os direitos reservados.</p>
-                <p>Desenvolvido por <a href="https://felipeprado200.github.io/Portifolio/" target="_blank">Felipe Prado</a></p>
-            </div>
+    </div>
+</footer>
+
+<a class="whatsapp-flutuante" href="https://wa.me/5513981804959" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">
+    <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+</a>
+
+<!-- =============================== Modais =============================== -->
+<div class="modal" id="modal-1" role="dialog" aria-modal="true" aria-labelledby="modal-1-titulo" hidden>
+    <div class="modal__caixa">
+        <button class="modal__fechar" type="button" aria-label="Fechar">
+            <svg class="icone" aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+        <img class="modal__imagem" src="img/reajuste.jpg" alt="" width="1024" height="1024" loading="lazy">
+        <div class="modal__conteudo">
+            <h2 id="modal-1-titulo">Como contestar reajuste abusivo do plano de saúde</h2>
+            <p>Os planos de saúde estão sujeitos a regras específicas quanto aos reajustes anuais. Quando o aumento ultrapassa os limites definidos pela Agência Nacional de Saúde Suplementar (ANS), pode configurar reajuste abusivo.</p>
+
+            <h3>O que pode caracterizar abusividade</h3>
+            <ul>
+                <li>O aumento ultrapassa o índice divulgado pela ANS para o tipo de contrato.</li>
+                <li>O reajuste é aplicado de forma discriminatória a um grupo específico.</li>
+                <li>Não há comunicação prévia na forma exigida pelo contrato e pela regulação.</li>
+                <li>A operadora não apresenta justificativa técnica para o percentual aplicado.</li>
+            </ul>
+
+            <h3>Caminhos administrativos</h3>
+            <p>O primeiro passo é pedir explicação formal à operadora, por escrito, e guardar o protocolo. Se a resposta não resolver, é possível:</p>
+            <ol>
+                <li>Registrar reclamação na ANS, pelo telefone 0800 701 9656 ou pelo site da agência.</li>
+                <li>Procurar o Procon do seu município.</li>
+                <li>Buscar orientação jurídica para avaliar a medida cabível.</li>
+            </ol>
+
+            <p class="modal__nota">Este texto é informativo e não substitui a análise do seu contrato e da sua situação.</p>
         </div>
-    </footer>
+    </div>
+</div>
 
-    <a href="https://wa.me/13981804959" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<div class="modal" id="modal-2" role="dialog" aria-modal="true" aria-labelledby="modal-2-titulo" hidden>
+    <div class="modal__caixa">
+        <button class="modal__fechar" type="button" aria-label="Fechar">
+            <svg class="icone" aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+        <img class="modal__imagem" src="img/erromedico.jpg" alt="" width="1024" height="1024" loading="lazy">
+        <div class="modal__conteudo">
+            <h2 id="modal-2-titulo">Erro médico: quando se caracteriza negligência</h2>
+            <p>Nem todo resultado indesejado em um tratamento configura erro passível de reparação. A legislação distingue situações diferentes, e essa distinção é o ponto de partida de qualquer análise.</p>
 
-    <script src="script.js"></script>
- 
+            <h3>Erro de diagnóstico</h3>
+            <p>Pode caracterizar falha quando o profissional deixou de seguir protocolos estabelecidos ou desconsiderou sintomas evidentes.</p>
+
+            <h3>Imperícia</h3>
+            <p>Ocorre quando falta ao profissional a habilidade técnica necessária para o procedimento realizado.</p>
+
+            <h3>Negligência</h3>
+            <p>Configura-se quando o profissional deixa de tomar cuidados básicos que se esperariam de qualquer colega na mesma situação.</p>
+
+            <h3>Imprudência</h3>
+            <p>Quando se age com precipitação, sem a cautela devida, em procedimentos desnecessários ou de risco evitável.</p>
+
+            <h3>O que reunir em caso de suspeita</h3>
+            <ul>
+                <li>Cópia integral do prontuário médico, que pode ser solicitada ao hospital.</li>
+                <li>Exames, receitas e relatórios anteriores e posteriores ao atendimento.</li>
+                <li>Registro de ocorrência, quando for o caso.</li>
+                <li>Segunda opinião médica por escrito.</li>
+            </ul>
+
+            <p class="modal__nota">Este texto é informativo e não substitui a análise do caso concreto.</p>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal-3" role="dialog" aria-modal="true" aria-labelledby="modal-3-titulo" hidden>
+    <div class="modal__caixa">
+        <button class="modal__fechar" type="button" aria-label="Fechar">
+            <svg class="icone" aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+        <img class="modal__imagem" src="img/medicamentoscusto.jpg" alt="" width="1024" height="1024" loading="lazy">
+        <div class="modal__conteudo">
+            <h2 id="modal-3-titulo">Medicamentos de alto custo pelo SUS</h2>
+            <p>O Sistema Único de Saúde prevê o fornecimento gratuito de medicamentos de alto custo em diversas situações. O pedido começa pela via administrativa, e a documentação completa costuma ser decisiva.</p>
+
+            <h3>1. Diagnóstico documentado</h3>
+            <p>É necessário laudo médico detalhado, com o CID, que descreva a condição e justifique a necessidade daquele medicamento.</p>
+
+            <h3>2. Prescrição médica</h3>
+            <p>A receita deve conter:</p>
+            <ul>
+                <li>Nome completo do paciente</li>
+                <li>Nome do medicamento, genérico ou de referência</li>
+                <li>Dosagem e posologia</li>
+                <li>Carimbo e CRM do profissional</li>
+                <li>Data da prescrição</li>
+            </ul>
+
+            <h3>3. Protocolo na Secretaria de Saúde</h3>
+            <p>Os documentos são apresentados no setor de medicamentos especializados da Secretaria Municipal ou Estadual. Em geral pedem:</p>
+            <ul>
+                <li>Cópia de RG e CPF</li>
+                <li>Comprovante de residência</li>
+                <li>Relatório médico completo</li>
+                <li>Exames complementares</li>
+            </ul>
+
+            <p class="modal__nota">Este texto é informativo. As exigências variam conforme o estado e o município.</p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>
