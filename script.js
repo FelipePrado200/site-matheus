@@ -258,6 +258,12 @@
       modal.addEventListener('click', function (evento) {
         if (evento.target === modal) fechar();
       });
+
+      // Links para ancoras da pagina (ex.: contato) fecham o artigo antes
+      // de rolar, senao a tela continua travada sobre o modal.
+      modal.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', fechar);
+      });
     });
 
     document.addEventListener('keydown', function (evento) {

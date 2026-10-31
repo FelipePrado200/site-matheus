@@ -993,9 +993,11 @@ input, select, textarea { font: inherit; color: inherit; }
 
 .texto__abrir:hover {
   border-color: var(--linha-clara-forte);
-  transform: translateY(-5px);
-  box-shadow: 0 18px 44px rgba(18, 23, 18, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(18, 23, 18, 0.08);
 }
+
+.texto__abrir:hover .texto__titulo { color: var(--verde); }
 
 .texto__imagem {
   display: block;
@@ -1022,6 +1024,9 @@ input, select, textarea { font: inherit; color: inherit; }
 }
 
 .texto__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
   font-size: var(--t-xs);
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -1029,26 +1034,48 @@ input, select, textarea { font: inherit; color: inherit; }
   color: var(--verde);
 }
 
+.texto__meta::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+/* Titulo e resumo com numero fixo de linhas: os tres cards da fileira
+   ficam alinhados mesmo quando os textos tem tamanhos diferentes. */
 .texto__titulo {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.6em;
   font-family: var(--serifa);
   font-size: var(--t-md);
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: var(--grafite);
+  transition: color var(--d-base) var(--ease);
 }
 
 .texto__resumo {
-  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-size: var(--t-sm);
   line-height: 1.6;
   color: var(--grafite-2);
 }
 
+/* A chamada fica num rodape separado por um fio, sempre no fundo do card. */
 .texto__link {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
+  margin-top: auto;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--linha-clara);
   font-size: var(--t-sm);
   font-weight: 600;
   color: var(--verde);
@@ -1479,17 +1506,19 @@ input, select, textarea { font: inherit; color: inherit; }
 
 .modal__imagem {
   width: 100%;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 7;
   object-fit: cover;
 }
 
-.modal__conteudo { padding: var(--sp-7); }
+.modal__conteudo { padding: var(--sp-7) var(--sp-7) var(--sp-6); }
 
 .modal__conteudo .etiqueta { color: var(--verde); }
 
 .modal__conteudo h2 {
   margin-bottom: var(--sp-5);
-  font-size: var(--t-xl);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .modal__conteudo h3 {
@@ -1521,6 +1550,31 @@ input, select, textarea { font: inherit; color: inherit; }
   font-size: var(--t-xs);
   color: var(--grafite-3) !important;
 }
+
+/* Chamada final: leva a pessoa do texto para o contato sem precisar
+   fechar o artigo antes. */
+.modal__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+  padding: var(--sp-5);
+  border-radius: var(--r-md);
+  background: var(--papel-3);
+}
+
+.modal__cta p {
+  max-width: 24rem;
+  font-family: var(--serifa);
+  font-size: var(--t-md);
+  line-height: 1.35;
+  color: var(--grafite);
+}
+
+.modal__cta .botao { color: var(--papel-2); background: var(--verde); }
+.modal__cta .botao:hover { background: var(--grafite); }
 
 body.travado { overflow: hidden; }
 
