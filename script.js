@@ -1,16 +1,15 @@
 /* =========================================================================
    Matheus Prado Advocacia
-   Comportamento da pagina: menu, entrada dos elementos, modais e formulario.
+   Comportamento da pagina: menu, progresso, entrada dos elementos, modais
+   e formulario.
 
-   Tudo degrada com elegancia. Sem JavaScript, o conteudo continua visivel e
-   o formulario envia pelo caminho normal.
+   Tudo degrada com elegancia. Sem JavaScript, o conteudo continua visivel
+   e o formulario envia pelo caminho normal.
    ========================================================================= */
 
 (function () {
   'use strict';
 
-  // Avisa ao CSS que o script rodou. Sem isso nada fica escondido esperando
-  // uma animacao que nunca vai acontecer.
   document.documentElement.classList.add('js');
 
   var menosMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -18,7 +17,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     anoAtual();
     menu();
-    cabecalhoFixo();
+    topoEProgresso();
     secaoAtual();
     revelar();
     modais();
@@ -33,7 +32,7 @@
 
   /* ---------------------------------------------------------------- menu */
   function menu() {
-    var botao = document.querySelector('.menu-botao');
+    var botao = document.querySelector('.hamburguer');
     var painel = document.getElementById('menu-principal');
     var fundo = document.querySelector('.menu-fundo');
 
@@ -54,7 +53,6 @@
       if (icone) icone.setAttribute('href', '#i-close');
 
       fundo.hidden = false;
-      // Um quadro de espera para a transicao de opacidade pegar.
       requestAnimationFrame(function () {
         fundo.classList.add('visivel');
       });
@@ -74,17 +72,15 @@
       window.setTimeout(function () {
         if (painel.classList.contains('aberto')) return;
         fundo.hidden = true;
-        // So depois da animacao o painel sai do fluxo de vez.
         painel.classList.add('escondido');
-      }, menosMovimento ? 0 : 240);
+      }, menosMovimento ? 0 : 320);
     }
 
-    function alternar() {
+    botao.addEventListener('click', function () {
       if (painel.classList.contains('aberto')) fechar();
       else abrir();
-    }
+    });
 
-    botao.addEventListener('click', alternar);
     fundo.addEventListener('click', fechar);
 
     painel.addEventListener('click', function (evento) {
@@ -98,23 +94,44 @@
       }
     });
 
-    // Ao voltar para a largura de desktop o painel nao pode ficar preso.
     window.addEventListener('resize', function () {
       if (window.innerWidth > 860 && painel.classList.contains('aberto')) fechar();
     });
   }
 
-  /* ----------------------------------------------------------- cabecalho */
-  function cabecalhoFixo() {
-    var cabecalho = document.getElementById('cabecalho');
-    if (!cabecalho) return;
+  /* --------------------------------------------- cabecalho e progresso */
+  function topoEProgresso() {
+    var topo = document.getElementById('topo');
+    var barra = document.querySelector('.progresso span');
+
+    if (!topo && !barra) return;
+
+    var pendente = false;
 
     function atualizar() {
-      cabecalho.classList.toggle('fixado', window.scrollY > 24);
+      pendente = false;
+
+      var y = window.scrollY;
+
+      if (topo) topo.classList.toggle('encolhido', y > 40);
+
+      if (barra) {
+        var total = document.documentElement.scrollHeight - window.innerHeight;
+        var parte = total > 0 ? Math.min(Math.max(y / total, 0), 1) : 0;
+        barra.style.width = (parte * 100).toFixed(2) + '%';
+      }
+    }
+
+    function agendar() {
+      // Um quadro por rolagem e suficiente, e evita trabalho repetido.
+      if (pendente) return;
+      pendente = true;
+      requestAnimationFrame(atualizar);
     }
 
     atualizar();
-    window.addEventListener('scroll', atualizar, { passive: true });
+    window.addEventListener('scroll', agendar, { passive: true });
+    window.addEventListener('resize', agendar, { passive: true });
   }
 
   /* ------------------------------------------------- secao atual no menu */
@@ -139,17 +156,15 @@
       function (entradas) {
         entradas.forEach(function (entrada) {
           var link = porId[entrada.target.id];
-          if (!link) return;
+          if (!link || !entrada.isIntersecting) return;
 
-          if (entrada.isIntersecting) {
-            links.forEach(function (outro) {
-              outro.removeAttribute('aria-current');
-            });
-            link.setAttribute('aria-current', 'true');
-          }
+          links.forEach(function (outro) {
+            outro.removeAttribute('aria-current');
+          });
+          link.setAttribute('aria-current', 'true');
         });
       },
-      // A faixa estreita no meio da tela evita que duas secoes disputem.
+      // Faixa estreita no meio da tela: evita que duas secoes disputem.
       { rootMargin: '-45% 0px -50% 0px' }
     );
 
@@ -158,7 +173,7 @@
     });
   }
 
-  /* ------------------------------------------- entrada dos elementos */
+  /* ----------------------------------------- entrada dos elementos */
   function revelar() {
     var alvos = Array.prototype.slice.call(document.querySelectorAll('[data-revelar]'));
     if (alvos.length === 0) return;
@@ -222,7 +237,7 @@
         function () {
           if (!modal.classList.contains('visivel')) modal.hidden = true;
         },
-        menosMovimento ? 0 : 240
+        menosMovimento ? 0 : 320
       );
 
       if (ultimoFoco) ultimoFoco.focus();
@@ -240,7 +255,6 @@
       var botao = modal.querySelector('.modal__fechar');
       if (botao) botao.addEventListener('click', fechar);
 
-      // Clicar no fundo escuro fecha; clicar na caixa nao.
       modal.addEventListener('click', function (evento) {
         if (evento.target === modal) fechar();
       });
@@ -294,14 +308,14 @@
 
     function mostrar(texto, tipo) {
       retorno.textContent = texto;
-      retorno.className = 'formulario__retorno ' + tipo;
+      retorno.className = 'painel__retorno ' + tipo;
       retorno.hidden = false;
     }
 
     form.addEventListener('submit', function (evento) {
       evento.preventDefault();
 
-      // A marca libera o destaque vermelho dos campos vazios.
+      // A marca libera o destaque dos campos vazios.
       form.classList.add('foi-validado');
 
       if (!form.checkValidity()) {
@@ -312,7 +326,7 @@
       }
 
       var botao = form.querySelector('button[type="submit"]');
-      var textoOriginal = botao ? botao.textContent : '';
+      var conteudoOriginal = botao ? botao.innerHTML : '';
 
       if (botao) {
         botao.disabled = true;
@@ -356,23 +370,17 @@
 
       envio
         .then(function () {
-          mostrar(
-            'Mensagem enviada. Retornamos dentro do horário de atendimento.',
-            'ok'
-          );
+          mostrar('Mensagem enviada. Retornamos dentro do horário de atendimento.', 'ok');
           form.reset();
           form.classList.remove('foi-validado');
         })
         .catch(function () {
-          mostrar(
-            'Não foi possível enviar agora. Chame no WhatsApp: (13) 98180-4959.',
-            'erro'
-          );
+          mostrar('Não foi possível enviar agora. Chame no WhatsApp: (13) 98180-4959.', 'erro');
         })
         .then(function () {
           if (botao) {
             botao.disabled = false;
-            botao.textContent = textoOriginal;
+            botao.innerHTML = conteudoOriginal;
           }
         });
     });
